@@ -109,12 +109,13 @@ int main()
     char geometryfigure[200];
     fgets(geometryfigure, 200, stdin);
 
-    checkfortruth(geometryfigure);
-/*
-    for(int i = 0; i < strlen(geometryfigure) - 1; i++) {
-        printf("%d\n", geometryfigure[i]);
+    if(checkfortruth(geometryfigure) == 0)
+    {
+        printf("Etered WKT-format figure: ");
+        for(int i = 0; i < strlen(geometryfigure) - 1; i++) {
+        printf("%c", geometryfigure[i]);
     }
-*/
+    }
 
 return 0;
 }
