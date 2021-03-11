@@ -1,47 +1,105 @@
 #include <stdio.h>
 #include <string.h>
+#include <ctype.h>
 
 int checkfortruth (char array[])
 {
-    if (array[0] == 'c' || array[0] == 'C')
+    int i, k = 6;
+    char circle[] = "circle";
+
+    for(i = 0; i < 6; i++)
     {
-        if (array[1] == 'i' || array[1] == 'I')
+       array[i] = tolower(array[i]);
+    }
+
+    for(i = 0; i < 6; i++)
+    {
+        if (array[i] == circle[i])
         {
-            if (array[2] == 'r' || array[2] == 'R')
-            {
-                if (array[3] == 'c' || array[3] == 'C')
-                {
-                    if (array[4] == 'l' || array[4] == 'L')
-                    {
-                        if (array[5] == 'e' || array[5] == 'E')
-                            printf("OK");
-                        else
-                            printf("expected: 'circle'");
-                    }
-                    else
-                        printf("expected: 'circle'");
-                }
-                else
-                    printf("expected: 'circle'");
-            }
-            else
-                printf("expected: 'circle'");
+
         }
         else
-            printf("expected: 'circle'");
+            printf("expected: 'circle'\n");
+        break;
     }
-    else
-        printf("expected: 'circle'");
-
-    if (array[6] == ' ' || array[6] == '(')
+    while (array[k] == ' ')
     {
-        for(int i = 6; array[i] == ' '; i++)
+        k++;
+    }
+    if (array[k] == '(')
+    {
+        k++;
+        if(isdigit(array[k]) != 0 || array[k] == '-')
         {
+            if(array[k] == '-')
+                k++;
+            if(isdigit(array[k]) != 0)
+            {
+                k+=2;
+                if(isdigit(array[k]) != 0 || array[k] == '-')
+                {
+                    if(array[k] == '-')
+                        k++;
+                    if(isdigit(array[k]) != 0)
+                    {
+                        k++;
+                    }
+                }
+                else
+                    printf("expected: digit after '('");
+            }
         }
-        i = 0;
+        else
+            printf("expected: digit after '('");
     }
     else
-        printf("Error at column 7: expected '('");
+        printf("expected: '(' after 'circle'\n");
+
+    while(array[k] == ' ')
+        k++;
+    if(array[k] == ',')
+    {
+        k++;
+        while(array[k] == ' ')
+            k++;
+    }
+    else
+        printf("expected: ',' after 'y' coordinate");
+
+    if(isdigit(array[k]) != 0)
+    {
+        while(isdigit(array[k]) != 0) //80
+            k++;
+    }
+    else
+        printf("expected: radius value after 'x y, '");
+
+    if(array[k] == '.')
+    {
+        k++;
+        while(isdigit(array[k]) != 0)
+            k++;
+        if(array[k] == ' ')
+        {
+            while(array[k] == ' ')
+                k++;
+            if(array[k] == ')')
+            {
+                k++;
+//                printf("%c", array[k]);
+                if(array[k] == '\0')
+                    printf("it`s ok!");
+            }
+            else
+                printf("expected: ')' after radius value");
+        }
+        
+    }
+    else
+        printf("expected: radius value must be 'double'");
+
+
+
 return 0;
 }
 
