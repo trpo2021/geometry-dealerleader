@@ -1,9 +1,8 @@
+#include <libgeometry/checkgeometry.h>
 #include "stdio.h"
 #include "string.h"
 #include "ctype.h"
-#include <libgeometry/checkgeometry.h>
 
-/*
 int checkfortruth (char array[])
 {
     int i, k = 6;
@@ -104,8 +103,7 @@ int checkfortruth (char array[])
 
 return 0;
 }
-*/
-
+/*
 int main()
 {
 // circle(1 1, 1.5)
@@ -122,3 +120,4 @@ int main()
 
 return 0;
 }
+*/
