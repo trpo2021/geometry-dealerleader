@@ -115,7 +115,7 @@ int main()
     if(checkfortruth(geometryfigure) == 0)
     {
         printf("Etered WKT-format figure: ");
-        for(int i = 0; i < strlen(geometryfigure) - 1; i++) {
+        for(size_t i = 0; i < strlen(geometryfigure) - 1; i++) {
         printf("%c", geometryfigure[i]);
     }
     }
