@@ -35,6 +35,7 @@ int checkfortruth (char array[])
                 k++;
             if(isdigit(array[k]) != 0)
             {
+//
                 k+=2;
                 if(isdigit(array[k]) != 0 || array[k] == '-')
                 {
@@ -42,6 +43,7 @@ int checkfortruth (char array[])
                         k++;
                     if(isdigit(array[k]) != 0)
                     {
+//
                         k++;
                     }
                 }
@@ -111,10 +113,11 @@ int main()
 
     if(checkfortruth(geometryfigure) == 0)
     {
-        printf("Etered WKT-format figure: ");
+        printf("Entered WKT-format figure: ");
         for(int i = 0; i < strlen(geometryfigure) - 1; i++) {
         printf("%c", geometryfigure[i]);
     }
+    printf("\n");
     }
 
 return 0;
