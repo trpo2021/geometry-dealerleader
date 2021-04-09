@@ -1,4 +1,4 @@
-CFLAGS = -Wall -Wextra -Werror
+CFLAGS = -Wall -Wextra -Werror -I src
 CPPFLAGS = -MMD
 
 bin/geometry: obj/src/geometry/geometry.o obj/libhello.a
@@ -10,7 +10,7 @@ obj/src/geometry/geometry.o: src/geometry/geometry.c
 obj/libhello.a: obj/src/libgeometry/checkgeometry.o
 	ar rcs $@ $^
 
-obj/src/checkgeometry.o: src/libgeometry/checkgeometry.c
+obj/src/libgeometry/checkgeometry.o: src/libgeometry/checkgeometry.c
 	$(CC) -c $(CFLAGS) $(CPPFLAGS) -o $@ $<
 
 .PHONY : clean
