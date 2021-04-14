@@ -7,10 +7,17 @@ bin/geometry: obj/src/geometry/geometry.o obj/libhello.a
 obj/src/geometry/geometry.o: src/geometry/geometry.c
 	$(CC) -c $(CFLAGS) $(CPPFLAGS) -o $@ $<
 
-obj/libhello.a: obj/src/libgeometry/checkgeometry.o
+obj/libhello.a: obj/src/libgeometry/checkgeometry.o obj/src/libgeometry/checkcoords.o obj/src/libgeometry/perim.o
 	ar rcs $@ $^
 
 obj/src/libgeometry/checkgeometry.o: src/libgeometry/checkgeometry.c
+	$(CC) -c $(CFLAGS) $(CPPFLAGS) -o $@ $<
+
+obj/src/libgeometry/checkcoords.o: src/libgeometry/checkcoords.c
+	$(CC) -c $(CFLAGS) $(CPPFLAGS) -o $@ $<
+
+
+obj/src/libgeometry/perim.o: src/libgeometry/perim.c
 	$(CC) -c $(CFLAGS) $(CPPFLAGS) -o $@ $<
 
 .PHONY : clean
@@ -18,4 +25,4 @@ obj/src/libgeometry/checkgeometry.o: src/libgeometry/checkgeometry.c
 clean:
 	rm -rf obj/src/libgeometry/*.o obj/src/geometry/*.o bin/geometry
 
--include geometry.d checkgeometry.d
+-include geometry.d checkgeometry.d checkcoords.d perim.d
