@@ -2,9 +2,9 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
-#include <libgeometry/checkgeometry.h>
-#include <libgeometry/checkcoords.h>
-#include <libgeometry/perim.h>
+#include "libgeometry/checkgeometry.h"
+#include "libgeometry/checkcoords.h"
+#include "libgeometry/perim.h"
 
 int main()
 {
