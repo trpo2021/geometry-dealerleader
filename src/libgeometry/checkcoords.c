@@ -1,9 +1,9 @@
-#include <libgeometry/checkcoords.h>
 #include "ctype.h"
 #include "stdio.h"
 #include "stdlib.h"
 #include "string.h"
-        void check_digit(char* str, char* mcoord, char* mrad)
+#include <libgeometry/checkcoords.h>
+void check_digit(char* str, char* mcoord, char* mrad)
 {
     unsigned int i = 0;
     char copystr[100] = "";

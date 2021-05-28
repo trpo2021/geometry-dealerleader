@@ -1,10 +1,10 @@
-#include <libgeometry/checkgeometry.h>
 #include "ctype.h"
 #include "stdio.h"
 #include "stdlib.h"
 #include "string.h"
+#include <libgeometry/checkgeometry.h>
 
-        void check_circle(char* string)
+void check_circle(char* string)
 {
     char cir[] = "circle";
     if (memcmp(string, cir, 6) != 0) {

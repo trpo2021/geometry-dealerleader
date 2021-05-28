@@ -1,10 +1,10 @@
+#include "libgeometry/checkcoords.h"
+#include "libgeometry/checkgeometry.h"
+#include "libgeometry/perim.h"
 #include <ctype.h>
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
-#include "libgeometry/checkgeometry.h"
-#include "libgeometry/checkcoords.h"
-#include "libgeometry/perim.h"
 
 int main()
 {
@@ -21,7 +21,7 @@ int main()
 
         char out[100] = "";
         strncpy(out, instr, 100);
-        for (i = 0;i < 100; i++) {
+        for (i = 0; i < 100; i++) {
             instr[i] = tolower(instr[i]);
         }
         check_circle(instr);
