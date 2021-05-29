@@ -4,7 +4,7 @@
 #include "string.h"
 #include <libgeometry/checkgeometry.h>
 
-void check_circle(char* string)
+int check_circle(char* string)
 {
     char cir[] = "circle";
     if (memcmp(string, cir, 6) != 0) {

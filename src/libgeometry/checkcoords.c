@@ -3,8 +3,7 @@
 #include "stdlib.h"
 #include "string.h"
 #include <libgeometry/checkcoords.h>
-void check_digit(char* str, char* mcoord, char* mrad, double* arr)
-{
+int check_digit(char* str, char* mcoord, char* mrad, double* arr) {
     unsigned int i = 0;
     char copystr[100] = "";
     int count = 0;
