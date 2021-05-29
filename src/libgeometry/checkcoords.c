@@ -49,8 +49,7 @@ int check_digit(char* str, char* mcoord, char* mrad, double* arr) {
     }
 
     for (i = 0; i < strlen(mrad); i++) {
-        if ((isdigit(mrad[i]) == 0) && (mrad[i] != '.') && (mrad[i] != ' ')
-            && (mrad[i] != '-')) {
+        if ((isdigit(mrad[i]) == 0) && (mrad[i] != '.') && (mrad[i] != ' ') && (mrad[i] != '-')) {
             return -7;
         }
     }
