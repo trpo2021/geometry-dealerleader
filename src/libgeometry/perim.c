@@ -5,8 +5,6 @@
 #include <libgeometry/perim.h>
 #include <math.h>
 
-int count;
-
 double coord_and_rad(char* rad, double* arr)
 {
     double s = atof(rad) * atof(rad) * M_PI;
@@ -18,6 +16,7 @@ double coord_and_rad(char* rad, double* arr)
 
 int intersec(int n, int end, double* save_rad, double* save_x, double* save_y)
 {
+    int count;
     for (int i = n; i < end; i++) {
         // printf("%d\n", n);
         for (int j = 0; j < end; j++) {
