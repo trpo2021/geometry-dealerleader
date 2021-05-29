@@ -16,12 +16,9 @@ double coord_and_rad(char* rad, double* arr) {
 int intersec(int n, int end, double* save_rad, double* save_x, double* save_y) {
     int count;
     for (int i = n; i < end; i++) {
-        // printf("%d\n", n);
         for (int j = 0; j < end; j++) {
             if (i != j) {
-                double lenght
-                        = sqrt(pow(save_x[j] - save_x[i], 2)
-                               + pow(save_y[j] - save_y[i], 2));
+                double lenght = sqrt(pow(save_x[j] - save_x[i], 2) + pow(save_y[j] - save_y[i], 2));
                 double summ = save_rad[i] + save_rad[j];
                 if (lenght <= summ) {
                     printf("%d,", j + 1);
