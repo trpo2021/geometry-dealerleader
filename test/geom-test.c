@@ -90,7 +90,7 @@ CTEST(coord_and_rad, area)
 {
     char rad[] = "5.0";
     double arr[2];
-    double real = coord_and_rad(rad, arr[]);
+    double real = coord_and_rad(rad, arr);
 
     double exp = 25 * M_PI;
 
