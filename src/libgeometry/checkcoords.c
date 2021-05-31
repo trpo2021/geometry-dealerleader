@@ -2,7 +2,8 @@
 #include "stdio.h"
 #include "stdlib.h"
 #include "string.h"
-#include <libgeometry/checkcoords.h>
+#include <../libgeometry/checkcoords.h>
+
 int check_digit(char* str, char* mcoord, char* mrad, double* arr)
 {
     unsigned int i = 0;

@@ -1,3 +1,5 @@
 #pragma once
 
-void check_circle(char* string);
+int check_circle(char* string);
+
+void warning(int sig);

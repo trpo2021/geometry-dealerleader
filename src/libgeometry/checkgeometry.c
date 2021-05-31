@@ -33,6 +33,7 @@ void warning(int sig)
 
     if (sig == -5)
         printf("Error: expected coordinatehh\n");
+        
     if (sig == -6)
         printf("Error: expected coordinate\n");
 

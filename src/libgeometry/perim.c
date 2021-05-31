@@ -1,9 +1,11 @@
 #include <ctype.h>
-#include <libgeometry/perim.h>
+#include "libgeometry/perim.h"
 #include <math.h>
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
+
+int count;
 
 double coord_and_rad(char* rad, double* arr)
 {
@@ -16,7 +18,6 @@ double coord_and_rad(char* rad, double* arr)
 
 int intersec(int n, int end, double* save_rad, double* save_x, double* save_y)
 {
-    int count;
     for (int i = n; i < end; i++) {
         for (int j = 0; j < end; j++) {
             if (i != j) {
